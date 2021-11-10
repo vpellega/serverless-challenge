@@ -9,13 +9,12 @@
 Utilize a imagem docker dentro de .devcontainer para rodar a aplicação
 
 
-> :bulb: Utilize o VSCode juntamente com a <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">extensão ms-vscode-remote.vscode-remote-extensionpack</a>. Poderá facilitar sua vida!
+> :bulb: Dica: Recomendo usar o VSCode juntamente com a <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">extensão ms-vscode-remote.vscode-remote-extensionpack</a>.
 
-A imagem já vem configurado com:
+A imagem já vem configurada com:
 * Serverless Framework
 * AWS-CLI
 * Node 16-bullseye
-* TypeScript
 
 ## Instalação
 
