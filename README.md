@@ -60,7 +60,7 @@ Este comando realiza:
 
 ## Exemplos
 
-Abaixo você poderá ver a aplicação rodando em um ambiente teste. Fique a vontade para usar os endpoints.
+Abaixo você poderá ver a aplicação rodando em um ambiente teste.
 
 * Base URL
 ```
