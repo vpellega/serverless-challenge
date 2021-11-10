@@ -1,0 +1,63 @@
+service: stefaninitest
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
+
+# custom:
+#   includeDependencies:
+#     always:
+#       - ''
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 512
+  lambdaHashingVersion: 20201221
+  # vpc:
+  #   securityGroupIds:
+      
+  #   subnetIds:
+      
+  stage: dev
+  region: us-east-1
+  # environment:
+  #   RDS_HOST: 
+  #   RDS_USERNAME: admin
+  #   RDS_PASSWORD: 
+  #   RDS_DBNAME: 
+
+package:
+  patterns:
+    - "!aws/**"
+    - "!src/**"
+    - "!test/**"
+  excludeDevDependencies: false
+
+functions:
+  CreateEmployee:
+    handler: dist/controllers/EmployeeHandler.Store
+    events:
+      - http:
+          path: /employee
+          method: post
+  GetOneEmployee:
+    handler: dist/controllers/EmployeeHandler.Show
+    events:
+      - http:
+          path: /employee/{employeeId}
+          method: get
+  UpdateEmployee:
+    handler: dist/controllers/EmployeeHandler.Update
+    events:
+      - http:
+          path: /employee
+          method: put
+  DeleteEmployee:
+    handler: dist/controllers/EmployeeHandler.Destroy
+    events:
+      - http:
+          path: /employee/{employeeId}
+          method: delete
